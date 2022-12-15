@@ -6,11 +6,12 @@ import (
 )
 
 func TestAdd(t *testing.T) {
+	res := "Hello 🗺️ !"
 	result := Hello()
 	fmt.Println(result)
-	if result != "Hello 🗺️ !" {
-		t.Errorf("Hello function is PASSED, Expected %s, got %s\n", "Hello 🗺️ !", result)
+	if result != res {
+		t.Errorf("Hello function is not PASSED, Expected %s, got %s\n", res, result)
 	} else {
-		t.Logf("Hello function is PASSED, Expected %s, got %s\n", "Hello 🗺️ !", result)
+		t.Logf("Hello function is PASSED, Expected %s, got %s\n", res, result)
 	}
 }
