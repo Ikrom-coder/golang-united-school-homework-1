@@ -7,7 +7,7 @@ import (
 )
 
 func TestAdd(t *testing.T) {
-	res := emoji.Sprint("Hello:world_map:")
+	res := emoji.Sprint("Hello:map:")
 	result := Hello()
 	fmt.Println(result)
 	if result != res {
