@@ -5,7 +5,10 @@ import (
 	"github.com/kyokomi/emoji/v2"
 )
 
+func Hello() string {
+	return emoji.Sprint("Hello :world_map:!")
+}
+
 func main() {
-	emojis := emoji.Sprint("Hello :world_map:!")
-	fmt.Println(emojis)
+	fmt.Println(Hello())
 }
