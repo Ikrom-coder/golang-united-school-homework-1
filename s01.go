@@ -1,6 +1,8 @@
 package structs
 
-import "reflect"
+import (
+	"reflect"
+)
 
 type User struct {
 	lastName  string
@@ -17,25 +19,25 @@ type UserInterface interface {
 	FullName() string
 }
 
-func (u User) SetFirstName(s string) {
+func (u *User) SetFirstName(s string) {
 	u.firstName = s
 }
 
-func (u User) SetLastName(s string) {
+func (u *User) SetLastName(s string) {
 	u.lastName = s
 }
 
-func (u User) FullName() string {
+func (u *User) FullName() string {
 	return u.lastName + " " + u.firstName
 }
 
-func ResetUser(user User) {
+func ResetUser(user *User) {
 	user.SetLastName("")
 	user.SetFirstName("")
 }
 
-func IsUser(input interface{}) bool {
-	if reflect.TypeOf(input) == reflect.TypeOf(User{}) {
+func IsUser(user interface{}) bool {
+	if reflect.TypeOf(user) == reflect.TypeOf(User{}) {
 		return true
 	}
 	return false
